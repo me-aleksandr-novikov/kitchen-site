@@ -1,0 +1,35 @@
+.bar{
+    background-color: rgba(0, 0, 0, 0.596);;
+}
+.navlink {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0  10px;
+}
+.navlink {
+    font: "Verdana", serif;
+    color: aliceblue;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+
+}
+.navlink:hover{
+    border-radius: 20%;
+    transition: 500ms;
+    opacity: 0.6;
+}
+
+.tel a{
+  margin: 0 auto;
+  font: "Verdana", serif;
+  color: aliceblue;
+  text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+@media (max-width: 990px) {
+    .tel a{
+        width: 100%;
+        color: black;
+      }
+}
