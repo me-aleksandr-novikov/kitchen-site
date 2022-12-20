@@ -15,6 +15,7 @@ function AppHeader() {
             <Nav.Link href="/">МЕБЕЛЬ СЕРВИС</Nav.Link>
           </div>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -22,16 +23,15 @@ function AppHeader() {
             <NavLink to="/services"><div className={'navlink'}>Наши услуги</div></NavLink>
             <NavLink to="/contact"><div className={'navlink'}>Контакты</div></NavLink>
             <NavLink to="/about"><div className={'navlink'}>О нас</div></NavLink>
-          </Nav>
-
-        </Navbar.Collapse>
-          <div className='tel'>
+            <div  className='tel'>
               <a href="tel:+1234567890">+1234567890</a>
-              <br />
               <a href="tel:+1234567890">+1234567890</a>
             </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 }
 
