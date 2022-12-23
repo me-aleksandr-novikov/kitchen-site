@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/pictures/instruments.png';
 import './AppHeader.css';
 
@@ -13,7 +13,7 @@ function AppHeader() {
           <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
             <NavLink to="/" style={{'display': 'flex', 'marginRight': '10px'}}>
               <img alt = "logo" src={logo} style={{ 'width': '80px', 'margin': '0' }} />
-              <div className={'navlink'} style={{'margin': '0'}}>МЕБЕЛЬ СЕРВИС</div>
+              <div className={'navlink logo'} style={{'margin': '0'}}>МЕБЕЛЬ СЕРВИС</div>
               </NavLink>
           </div>
         </div>

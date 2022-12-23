@@ -1,8 +1,35 @@
 .contactUs{
-    margin: 500px 100px;
+    position: absolute;
+    top:  50vh;
+    margin: 0 5%;
     width: 450px;
     /* height: 400px; */
     box-shadow: 1px 1px 10px #010300;
+}
+
+@media (max-width: 990px) {
+    .contactUs{
+        position: absolute;
+        top:  27vh;
+        left: 5vw;
+        max-width: 500px;
+        width: 80vw;
+    }
+    /* .contactUs__box{
+        
+    } */
+}
+
+@media (height < 741px) and (max-width: 990px)  {
+    .contactUs{
+        top: 23.5%;
+    }
+}
+
+@media (height < 700px) and (width < 400px)  {
+    .contactUs{
+        display: none;
+    }
 }
 
 .contactUs__box{
