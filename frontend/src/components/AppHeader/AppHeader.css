@@ -1,6 +1,6 @@
 .bar{
-    background-color: rgba(0, 0, 0, 0.692);
-    position: fixed;
+  background-color: rgba(0, 0, 0, 0.692);
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -12,7 +12,6 @@
     justify-content: center;
     align-items: center;
     margin: 0  10px;
-    font: "Verdana", serif;
     color: aliceblue;
     text-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
@@ -26,26 +25,18 @@
 .tel{
     position: absolute;
     left: 80%;
-    top: 23px;
+    top: 18px;
     height: 40px;
-    width: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
+.tel img {
+    width: 27px;
+    margin-right: 5px;
+}  
+
 @media (min-width: 990px) {
-    .tel a:nth-child(2){ 
-        width: 100px;
-        height: 25px;
-        margin-top: 40%;
-        margin-left: -97px;
-    }
-    .tel a:nth-child(1){ 
-        width: 100px;
-        height: 25px;
-        margin-top: -30%;
-        margin-left: 50px;
+    .tel div { 
+        display: flex;
     }
 }
 
@@ -59,8 +50,7 @@
 }
 
 .tel a{    
-    font: "Verdana", serif;
+    /* font: "Roboto"; */
     color: aliceblue;
     text-shadow: 1px 1px 10px rgb(0, 0, 0);
-
 }

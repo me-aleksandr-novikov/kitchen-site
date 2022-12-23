@@ -7,7 +7,7 @@ const HomePage = () => {
         <>
         <div className="first-page">
             <h2 className='first-page__title'>Заказали новую мебель?</h2>
-            <h2 className='first-page__subtitle'>Наш мастер уже в пути!</h2>
+            <h2 className='first-page__subtitle'>Поможем собрать и установить!</h2>
             <ContactUs/>
         </div>
         </>

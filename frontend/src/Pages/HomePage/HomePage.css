@@ -28,6 +28,7 @@ h2{
     position: fixed;
     top: 75%;
     left: 50%;
+    text-align: center;
 }
 
 @media (max-width: 990px) {
