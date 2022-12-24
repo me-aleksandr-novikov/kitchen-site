@@ -6,7 +6,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Paper from '@mui/material/Paper';
 import emailjs from "@emailjs/browser";
 import { IMaskInput } from 'react-imask';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
 import './ContactUs.css';
 
@@ -33,38 +33,45 @@ TextMaskCustom.propTypes = {
 
 export default function ContactUs() {
   const form = useRef();
-  const [apiKeys, setApiKeys] = useState({});
   const [formVision, setFormVision] = useState('');
   const [values, setValues] = useState({
     textmask: '+7(900) 000-0000'
   });
 
-  useEffect(() => {
-     axios.get('http://localhost:4000/api/apiKeys')
-        .then((response) => {
-          setApiKeys(response.data);
-        })
-  }, []);
-
+  const okMessage = 'Заявка оформлена! Подождите, пока мы вам перезвоним',
+    errMessage = 'Проблемы с сервером, IT-отдел уже занялся решением. Попробуйте позднее...';
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(apiKeys);
-    emailjs.sendForm(apiKeys.SERVICE_ID, apiKeys.TEMPLATE_ID, form.current, apiKeys.PUBLIC_KEY)
-      .then((result) => {
-        console.log(result);
+    const requestData = () => {
+        setFormVision('Отправляем...')
+        axios.get('http://localhost:4000/api/apiKeys')
+        .then(async (response) => {
 
-        if(result.status = 200){
-          setFormVision('Заявка оформлена! Подождите, пока мы вам перезвоним');
-        }else{
-          setFormVision('Проблемы с сервером, IT-отдел уже занялся решением. Попробуйте позднее...');
-        }
+          await emailjs.sendForm(response.data.SERVICE_ID, response.data.TEMPLATE_ID, form.current, response.data.PUBLIC_KEY)
+          .then((result) => {
+            console.log(result);
+    
+            if (result.status === 200) {
+              setFormVision(okMessage);
+            } else {
+              setFormVision(errMessage);
+            }
+    
+          }, (error) => {
+            console.log(error.text);
+            setFormVision(errMessage);
+          });
 
-      }, (error) => {
-        console.log(error.text);
-        setFormVision('Проблемы с сервером, IT-отдел уже занялся решением. Попробуйте позднее...');
-      });
+        })
+        .catch(function (error) {
+          console.log(error.toJSON());
+          setFormVision(errMessage);
+        })
 
+
+    }
+    requestData();
   };
 
   const handleChange = (event) => {
@@ -74,8 +81,8 @@ export default function ContactUs() {
     });
   };
 
-
   return (
+
     <form className="contactUs" ref={form} onSubmit={sendEmail}>
       <Paper elevation={3} className="contactUs__box">
         <h3 className="contactUs__title">Оставьте заявку,<br /> мы скоро с вами свяжемся!</h3>
@@ -116,11 +123,12 @@ export default function ContactUs() {
             maxRows={3}
           />
         </div>
-        <Button variant="contained" color="success" className="contactUs__btn">
+        <Button variant="contained" disabled = {formVision ? 'disabled' : ''} color="success" className="contactUs__btn">
           <input type="submit" value="Заказать звонок" />
         </Button>
-        <div style={{'textAlign': 'center', 'marginTop': '10px'}}>{formVision}</div>
+        <div style={{ 'textAlign': 'center', 'marginTop': '10px' }}>{formVision}</div>
       </Paper>
     </form>
+
   );
 }

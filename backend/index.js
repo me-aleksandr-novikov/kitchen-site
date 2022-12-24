@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+
 require('dotenv').config();
+
 
 app.use(cors());
 
@@ -16,6 +18,11 @@ app.get('/api/apiKeys', (req,res) => {
         TEMPLATE_ID: process.env.TEMPLATE_ID
     }
     res.send(apiKeys);
+})
+
+app.get('/api/products', (req,res) => {
+    const products = require('./productCards/productCards.json');
+    res.send(products);
 })
 
 app.listen(4000,() => {

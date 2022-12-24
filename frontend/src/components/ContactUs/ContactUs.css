@@ -1,3 +1,7 @@
+.contactUs__openForm {
+    top: 100px;   
+}
+
 .contactUs{
     position: absolute;
     top:  50vh;
