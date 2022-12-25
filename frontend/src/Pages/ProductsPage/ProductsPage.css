@@ -1,7 +1,7 @@
 .productCards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    align-items: start;
+    justify-content: center;
+    align-items: flex-start;
     height: 800px;
 }

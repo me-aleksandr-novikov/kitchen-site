@@ -123,8 +123,8 @@ export default function ContactUs() {
             maxRows={3}
           />
         </div>
-        <Button variant="contained" disabled = {formVision ? 'disabled' : ''} color="success" className="contactUs__btn">
-          <input type="submit" value="Заказать звонок" />
+        <Button type="submit" variant="contained" disabled = {formVision ? true : false} color="success" className="contactUs__btn">
+          Заказать звонок
         </Button>
         <div style={{ 'textAlign': 'center', 'marginTop': '10px' }}>{formVision}</div>
       </Paper>
