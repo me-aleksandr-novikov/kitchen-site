@@ -25,6 +25,11 @@ app.get('/api/products', (req,res) => {
     res.send(products);
 })
 
+app.get('/api/service', (req,res) => {
+    const products = require('./productCards/productCards.json');
+    res.send(products);
+})
+
 app.listen(4000,() => {
     console.log('Server is running on port 4000')
 });

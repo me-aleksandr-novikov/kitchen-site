@@ -8,7 +8,7 @@ import './FormCard.css';
 
 const FormCard = ({props}) => {
   return (
-    <Card sx={{ maxWidth: props.cardMaxWidth }} className = 'card'>
+    <Card sx={{ maxWidth: props.cardMaxWidth}}  className = 'card'>
       <CardActionArea>
         <CardMedia
           component= {props.image.extension}

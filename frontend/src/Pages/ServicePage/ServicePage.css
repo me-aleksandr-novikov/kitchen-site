@@ -1,7 +1,11 @@
-.productCards{
+.servicePage{
+    margin: 90px 10px;
+    text-align: center;
+}
+
+.serviceCards{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    /* height: 800px; */
 }
