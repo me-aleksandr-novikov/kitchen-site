@@ -18,9 +18,14 @@
 }
 
 .navlink:hover{
-    border-radius: 20%;
     transition: 500ms;
     opacity: 0.6;
+}
+
+.active .navlink {
+    transition: 500ms;
+    text-shadow: #FC0 1px 0 10px;
+    color: rgb(255, 255, 255);
 }
 
 .tel{

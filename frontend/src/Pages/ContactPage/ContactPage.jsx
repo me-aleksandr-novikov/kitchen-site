@@ -1,9 +1,13 @@
 import React from 'react';
+import { Paper } from '@mui/material';
+import './ContactPage.css';
 
 const ContactPage = () => {
     return (
-        <div>
-            Контакты
+        <div className='contactPage'>
+            <Paper className='paper' elevation={24}>
+                
+            </Paper>
         </div>
     );
 };

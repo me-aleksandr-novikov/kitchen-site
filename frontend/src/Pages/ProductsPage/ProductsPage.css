@@ -1,7 +1,24 @@
+.productPage{
+    margin: 90px auto;
+    text-align: center;
+    min-height: 67.5vh ;
+}
+
+.productPage .title {
+    margin: 0 3vw;
+}
+
+.productPage .subtitle {
+    margin: 0 3vw 5vh 3vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #fdfdfd;
+    font-size: 25px;
+    text-shadow: 0px 0px 7px #000000;
+    line-height: 25px;
+}
 .productCards{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    /* height: 800px; */
 }

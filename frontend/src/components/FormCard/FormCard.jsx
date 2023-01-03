@@ -6,20 +6,21 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './FormCard.css';
 
-const FormCard = ({props}) => {
+const FormCard = ({props, path}) => {
   return (
     <Card sx={{ maxWidth: props.cardMaxWidth}}  className = 'card'>
       <CardActionArea>
-        <CardMedia
+        <CardMedia 
           component= {props.image.extension}
-          height= {props.image.height}
-          image={props.image.url}
+          style = {{height: `${props.image.height}px`, objectFit: 'cover'}}//scale-down
+          image={`http://localhost:4000/${path}${props.image.url}`}
           alt={props.image.alt}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {props.title}
           </Typography>
+          
           <Typography variant="body2" color="text.secondary">
             {props.descr}
           </Typography>

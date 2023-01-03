@@ -1,0 +1,11 @@
+.contactPage{
+    margin: 90px 10px;
+    text-align: center;
+    min-height: 64.5vh;
+}
+.paper {
+    margin: 0 auto;
+    padding: 10px;
+    width: max-content;
+    height: max-content;
+}

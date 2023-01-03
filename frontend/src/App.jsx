@@ -19,12 +19,12 @@ const App = () => {
         
     axios.get('http://localhost:4000/api/products')
     .then( (response) => {
-        setProdItems(response.data.map((e) => (<FormCard props = {e} key = {e.key} />))); 
+        setProdItems(response.data.map((e) => (<FormCard path = {'productCards/imgs/'} props = {e} key = {e.key} />))); 
     })
 
     axios.get('http://localhost:4000/api/service')
     .then( (response) => {
-        setServiceItems(response.data.map((e) => (<FormCard props = {e} key = {e.key} />))); 
+        setServiceItems(response.data.map((e) => (<FormCard path = {'serviceCards/imgs/'} props = {e} key = {e.key} />))); 
     });
 
     return (

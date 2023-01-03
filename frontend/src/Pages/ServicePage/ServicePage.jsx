@@ -4,10 +4,12 @@ import "./ServicePage.css";
 const ServicePage = (props) => {
     return (
         <div className='servicePage'>
-            <h2>Каждому клиенту мы готовы предложить помощь</h2>
-            <p>Свяжитесь с нами для уточнения материала и габаритов</p>
+            <h2 className='title'>Каждому клиенту мы готовы предложить помощь</h2>
+            <p className='subtitle'>Уточнить информацию можете у наших специалистов</p>
             <div className='serviceCards'>
-                {props.items}
+                {
+                        (props.items.length === 0)?<img alt='404notfound' src="https://media.tenor.com/IHdlTRsmcS4AAAAC/404.gif"/>:props.items
+                }
             </div>
 
         </div>

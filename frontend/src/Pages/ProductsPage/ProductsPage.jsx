@@ -3,15 +3,17 @@ import './ProductsPage.css';
 
 const ProductsPage = (props) => {
 
-    
+
     return (
-        <div  style={{'margin': '90px 10px', 'textAlign': 'center'}}>
-            <h2>Наша мастерская готова предложить товары под заказ</h2>
-            <p>Свяжитесь с нами для уточнения материала и габаритов</p>
-            <div className = 'productCards'>
-                {props.items}
+        <div className='productPage'>
+            <h2 className='title'>Наша мастерская готова предложить товары под заказ</h2>
+            <p className='subtitle'>Свяжитесь с нами для уточнения материала и габаритов</p>
+            <div className='productCards'>
+                {
+                    (props.items.length === 0) ? <img alt='404notfound' src="https://media.tenor.com/IHdlTRsmcS4AAAAC/404.gif" /> : props.items
+                }
             </div>
-            
+
         </div>)
 };
 
