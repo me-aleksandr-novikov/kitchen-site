@@ -1,11 +1,18 @@
 .contactPage{
-    margin: 90px 10px;
+    margin: 100px 10px;
     text-align: center;
     min-height: 64.5vh;
 }
 .paper {
     margin: 0 auto;
-    padding: 10px;
-    width: max-content;
-    height: max-content;
+    padding: 20px;
+}
+
+.contactPage__title{
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    font-size: 25px;
+    text-shadow: 0px 0px 10px #363300;
+    line-height: 25px;
+    margin-bottom: 10px;
 }

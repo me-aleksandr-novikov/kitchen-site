@@ -10,7 +10,7 @@ const ProductsPage = (props) => {
             <p className='subtitle'>Свяжитесь с нами для уточнения материала и габаритов</p>
             <div className='productCards'>
                 {
-                    (props.items.length === 0) ? <img alt='404notfound' src="https://media.tenor.com/IHdlTRsmcS4AAAAC/404.gif" /> : props.items
+                    (props.items.length === 0) ? <img style = {{margin: '0 auto', maxWidth: '60%'}} alt='404notfound' src="https://media.tenor.com/IHdlTRsmcS4AAAAC/404.gif" /> : props.items
                 }
             </div>
 

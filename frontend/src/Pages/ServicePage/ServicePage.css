@@ -5,16 +5,30 @@
 }
 
 .servicePage .title {
-    margin: 0 3vw;
+    margin: 0 auto;
+    padding: 5px;
+    max-width: 90vw;
+}
+
+@media (max-width: 300px) {
+    h2{
+        font-size-adjust: initial;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        width: 100vw;
+    }
 }
 
 .servicePage .subtitle {
-    margin: 0 3vw 5vh 3vw;
+    margin: 0 auto;
+    padding: 15px;
     font-family: 'Open Sans', sans-serif;
     color: #fdfdfd;
     font-size: 25px;
     text-shadow: 0px 0px 7px #000000;
     line-height: 25px;
+    max-width: 90vw;
 }
 
 .serviceCards{
