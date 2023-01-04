@@ -1,23 +1,93 @@
 import React from 'react';
-import './HomePage.css'
 import ContactUs from '../../components/ContactUs/ContactUs';
+import { Paper } from '@mui/material';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Zoom, Autoplay, Navigation } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import './HomePage.css';
 
 const HomePage = () => {
 
+    function importAll(r) {
+        return r.keys().map(r);
+    }
+
+    const images = importAll(require.context('../../assets/kitchens', false, /\.(png|jpe?g|svg)$/));
+    const sliderImgs = [];
+
+
+    images.forEach(element => {
+        sliderImgs.push(
+            <SwiperSlide key={element}>
+                <div className="swiper-zoom-container">
+                    <img className='slider__img' alt='' src={element} />
+                </div>
+            </SwiperSlide>
+        );
+    });
+
     return (
         <>
-        <div className="first-page">
-            <h2 className='first-page__title'>Заказали новую мебель?</h2>
-            <h2 className='first-page__subtitle'>Поможем собрать и установить!</h2>
-            <ContactUs/>
-        </div>
-        <div className="second-page">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam rem fugit explicabo nihil, harum adipisci, error, incidunt libero qui esse natus delectus doloribus illo reprehenderit nulla alias. Perspiciatis, amet voluptates?
-            Repellat modi qui quidem sed recusandae eos inventore repellendus, est error numquam temporibus provident harum officiis placeat enim assumenda beatae. Rem, repellendus reiciendis dolorem nemo tempora quos repudiandae provident ea?
-            Quis incidunt rem libero eligendi at, iste consequatur quo voluptates reiciendis nihil quos voluptatem expedita? Ipsa, laudantium eligendi? Ipsa quam, odio adipisci autem ex ut aspernatur perspiciatis placeat quaerat maxime!
-            Maiores, pariatur magnam repudiandae molestiae libero quos numquam eveniet impedit eius esse reprehenderit assumenda officia similique? Voluptatem possimus mollitia, corporis, expedita velit non amet nemo laborum earum beatae dolore. Vero?
-            Praesentium libero voluptas dolore tempora quas dolorum exercitationem voluptatibus repudiandae necessitatibus molestiae tempore hic, assumenda optio modi aut facere blanditiis, minima enim quaerat qui! Soluta, similique quo. Facilis, commodi natus.</p>
-        </div>
+            <div className="preview">
+                <h2 className='preview__title'>Заказали новую мебель?</h2>
+                <h2 className='preview__subtitle'>Поможем собрать и установить!</h2>
+                <ContactUs />
+            </div>
+            <div className="slider">
+                <Paper 
+                    sx={{bgcolor: 'lightyellow'}}
+                    className='slider__paper'
+                    elevation={24}>
+                    <h2 className='slider__title'>Наши работы</h2>
+                    <Swiper
+                        style={{
+                            "--swiper-navigation-color": "#fff",
+                            "--swiper-pagination-color": "#fff",
+                        }}
+                        keyboard={{
+                            enabled: true,
+                        }}
+                        slidesPerView={"auto"}
+                        autoHeight={true}
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        navigation={true}
+                        
+                        zoom={true}
+                        modules={[Keyboard, Zoom, Autoplay, Navigation]}
+                        className="mySwiper"
+                    >
+                        {sliderImgs}
+                    </Swiper>
+                </Paper>
+            </div>
+            <div className="partners">
+                <Paper sx={{bgcolor: 'lightyellow'}} className='partners__paper' elevation={24}>
+                    <div className="partners__title">С нами сотрудничают</div>
+                    <div className="partners__icons">
+                        <img alt='appleico' src="https://img.icons8.com/3d-fluency/94/null/mac-os.png" />
+                        <img alt='chromeico' src="https://img.icons8.com/3d-fluency/94/null/chrome.png" />
+                        <img alt='appleico' src="https://img.icons8.com/3d-fluency/94/null/mac-os.png" />
+                        <img alt='chromeico' src="https://img.icons8.com/3d-fluency/94/null/chrome.png" />
+                        <img alt='appleico' src="https://img.icons8.com/3d-fluency/94/null/mac-os.png" />
+                        <img alt='chromeico' src="https://img.icons8.com/3d-fluency/94/null/chrome.png" />
+                        <img alt='appleico' src="https://img.icons8.com/3d-fluency/94/null/mac-os.png" />
+                        <img alt='chromeico' src="https://img.icons8.com/3d-fluency/94/null/chrome.png" />
+                        <img alt='appleico' src="https://img.icons8.com/3d-fluency/94/null/mac-os.png" />
+                        <img alt='chromeico' src="https://img.icons8.com/3d-fluency/94/null/chrome.png" />
+                    </div>
+                </Paper>
+            </div>
         </>
     );
 };

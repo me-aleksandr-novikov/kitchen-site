@@ -10,7 +10,7 @@ function AppHeader() {
   const [onSelectMenu, setOnSelectMenu] = useState(false);
 
   return (
-    <Navbar  expanded = {onSelectMenu} expand="lg" className='bar' variant="dark">
+    <Navbar expanded = {onSelectMenu} expand="lg" className='bar' variant="dark">
       <Container>
         <div>
           <div style={{ 'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>

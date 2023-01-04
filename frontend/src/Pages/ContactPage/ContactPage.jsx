@@ -5,7 +5,7 @@ import './ContactPage.css';
 const ContactPage = () => {
     return (
         <div className='contactPage'>
-            <Paper className='paper' elevation={24}>
+            <Paper sx={{bgcolor: 'lightyellow'}} className='paper' elevation={24}>
                 <div className="contactPage__title">
                     Эта страница находится в разработке
                 </div>

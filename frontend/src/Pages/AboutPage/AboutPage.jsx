@@ -5,7 +5,7 @@ import './AboutPage.css';
 const AboutPage = () => {
     return (
         <div className='aboutPage'>
-            <Paper className='paper' elevation={24}>
+            <Paper sx={{bgcolor: 'lightyellow'}} className='paper' elevation={24}>
                 <div className="aboutPage__title">
                     Эта страница находится в разработке
                 </div>
